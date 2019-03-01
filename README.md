@@ -1,5 +1,8 @@
 # aed2_2019_1
 
+Padrão de codificação: https://www.gnu.org/prep/standards/html_node/Writing-C.html
+
+
 Questões de Ordenação
 ---------------------------
 
