@@ -3,6 +3,11 @@
 Questões de Ordenação
 ---------------------------
 
+Dado um vetor de 10 posições:
+- implemente o algoritmo de ordenação solicitado
+- "rode" o algoritmo com o vetor de 10 posições fornececido até a ordenação total
+
+
 Edital de Seleção 032/2016
 1
 4
