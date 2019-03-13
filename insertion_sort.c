@@ -4,7 +4,7 @@
 int insertion_sort(int arr[])
 {
 	int i, key, j;
-	int vet_aux = arr;
+	int vet_aux[TAM] = arr;
 	for (i=1; i<TAM; i++)
     	{
 		key = vet_aux[i];
