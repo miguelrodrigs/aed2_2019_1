@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define TAM 5
-
+#define TAM 1000
+/*
 void imprimir()
 {
 	printf("Entre com 5 numeros:\n");	
@@ -16,25 +16,26 @@ void imprime_ordenado(int numeros[])
 		printf("%4d", numeros[i]);
 	}
 }
-
-void bubble_sort(int numeros[])
+*/
+int bubble_sort(int numeros[])
 {
 	int aux;
+	int aux_vet[TAM] = numeros
 	for(int contador = 1 ; contador < TAM ; contador++)
 	{
 		for(int i = 0 ; i < TAM -1 ; i++)
 		{
-			if(numeros[i] > numeros[i+1])
+			if(aux_vet[i] > aux_vet[i+1])
 			{
-				aux = numeros[i];
-				numeros[i] = numeros[i+1];
-				numeros[i+1] = aux;
+				aux = aux_vet[i];
+				aux_vet[i] = aux_vet[i+1];
+				aux_vet[i+1] = aux;
 			}
 		}
 	}
-	imprime_ordenado(numeros);
+	return aux_vet
 }
-
+/*
 void leitura()
 {
 	int numeros[TAM];	
@@ -55,3 +56,4 @@ int main(int argc, char** argv)
 	
 	return 0;
 }
+*/
