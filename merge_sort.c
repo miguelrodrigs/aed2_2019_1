@@ -1,88 +1,67 @@
-#include <stdio.h>
+#include "io.h"
 #include <stdlib.h>
 
-void merge(int vetor[], int comeco, int meio, int fim) 
+void merge(int vector[], int beginning, int middle, int end)
 {
-    int com1 = comeco, com2 = meio+1, com_aux = 0, tam = fim-comeco+1;
-    int *vet_aux;
-    vet_aux = (int*)malloc(tam * sizeof(int));
+    int com1 = beginning, com2 = middle+1, com_aux = 0, size = end-beginning+1;
+    int *vect_aux;
+    vect_aux = (int*)malloc(size * sizeof(int));
 
-    while(com1 <= meio && com2 <= fim-1)
+    while(com1 <= middle && com2 <= end-1)
 	{
-        if(vetor[com1] < vetor[com2])
+        if(vector[com1] < vector[com2])
 		{
-            vet_aux[com_aux] = vetor[com1];
+            vect_aux[com_aux] = vector[com1];
             com1++;
-        } 
-		else 
+        }
+		else
 		{
-            vet_aux[com_aux] = vetor[com2];
+            vect_aux[com_aux] = vector[com2];
             com2++;
         }
         com_aux++;
     }
 
-    while(com1 <= meio)
+    while(com1 <= middle)
 	{
-        vet_aux[com_aux] = vetor[com1];
+        vect_aux[com_aux] = vector[com1];
         com_aux++;
         com1++;
     }
 
-    while(com2 <= fim)
+    while(com2 <= end)
 	{
-        vet_aux[com_aux] = vetor[com2];
+        vect_aux[com_aux] = vector[com2];
         com_aux++;
         com2++;
     }
 
-    for(com_aux = comeco; com_aux <= fim; com_aux++)
+    for(com_aux = beginning; com_aux <= end; com_aux++)
 	{
-        vetor[com_aux] = vet_aux[com_aux-comeco];
+        vector[com_aux] = vect_aux[com_aux-beginning];
     }
 
-    free(vet_aux); 
+    free(vect_aux);
 }
 
-void print_vetor(int vetor[], int tam)
+void merge_sort(int vector[], int beginning, int end)
 {
-
-    for (int i=0; i < tam; i++)
+    if (beginning < end)
 	{
-        printf("%i ", vetor[i]);
-    }
-    printf("\n");
-}
+        int middle = (end+beginning)/2;
 
-void merge_sort(int vetor[], int comeco, int fim)
-{
-    if (comeco < fim) 
-	{
-        int meio = (fim+comeco)/2;
-
-        merge_sort(vetor, comeco, meio);
-        merge_sort(vetor, meio+1, fim);
-        merge(vetor, comeco, meio, fim);
+        merge_sort(vector, beginning, middle);
+        merge_sort(vector, middle + 1, end);
+        merge(vector, beginning, middle, end);
     }
 }
 
-int main()
+/* int main()
 {
-    int vet[12];
-    int tam = 12;
+    int vector[1000];
 
-    for (int i=0;i<tam;i++)
-	{
-        vet[i] = rand() % 100 + 1; 
-    }
-
-    printf("Vetor Desordenado");
-    print_vetor(vet, tam);
-
-    merge_sort(vet, 0, tam);
-
-    printf("Vetor Ordenado: ");
-    print_vetor(vet, tam);
-
+    create_vector(vector, 1000);
+    merge_sort(vector, 0, 1000);
+    print_vector(vector, 1000);
     return 0;
-}
+} */
