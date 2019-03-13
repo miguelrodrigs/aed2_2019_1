@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define TAM 10
+#define TAM 1000
 
-void povoa_vetor(int *vetor);
-void imprime_vetor(int *vetor);
+//void povoa_vetor(int *vetor);
+//void imprime_vetor(int *vetor);
 void selection_sort(int *vetor);
-
+/*
 int main()
 {
     int vetor[TAM];
@@ -43,10 +43,11 @@ void imprime_vetor(int *vetor)
     printf("\n\n ");
 
 }
-
-void selection_sort(int *vetor){
+*/
+int selection_sort(int *vetor){
     int menor;
     int aux;
+    int aux_vet[TAM] = vetor;
 
     for( int i = 0; i < TAM-1; i++)
     {
@@ -54,14 +55,15 @@ void selection_sort(int *vetor){
 
         for (int j = i+1; j < TAM; j++)
         {
-            if (vetor[j] < vetor[menor])
+            if (aux_vet[j] < aux_vet[menor])
             {
                 menor = j;
             }
         }
-        aux = vetor[i];
-        vetor[i] = vetor[menor];
-        vetor[menor] = aux;
+        aux = aux_vet[i];
+        aux_vet[i] = aux_vet[menor];
+        aux_vet[menor] = aux;
 
     }
+    return aux_vet;
 }
