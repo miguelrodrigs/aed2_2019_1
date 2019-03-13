@@ -1,66 +1,50 @@
-#include <stdio.h>
+#include "io.h"
 #include <stdlib.h>
 
-void quick_sort(int vet[], int com, int fim)
+void quick_sort(int vect[], int beginning, int end)
 {
-	int i, j, pivo, aux;
-	i = com;
-	j = fim-1;
-	pivo = vet[(com + fim) / 2]; 
-	while(i <= j) 
+	int i, j, pivot, aux;
+	i = beginning;
+	j = end-1;
+	pivot = vect[(beginning + end) / 2];
+	while(i <= j)
 	{
-		while(vet[i] < pivo && i < fim) 
+		while(vect[i] < pivot && i < end)
 		{
 			i++;
 		}
-		while(vet[j] > pivo && j > com) 
+		while(vect[j] > pivot && j > beginning)
 		{
 			j--;
 		}
-		if(i <= j) 
+		if(i <= j)
 		{
-			aux = vet[i];
-			vet[i] = vet[j];
-			vet[j] = aux;
+			aux = vect[i];
+			vect[i] = vect[j];
+			vect[j] = aux;
 			i++;
 			j--;
 		}
 	}
-	if(j > com)
-		quick_sort(vet, com, j+1);
-	if(i < fim)
-		quick_sort(vet, i, fim);
+	if(j > beginning)
+		quick_sort(vect, beginning, j+1);
+	if(i < end)
+		quick_sort(vect, i, end);
 }
 
-void print_vetor(int vetor[], int tam)
-{
-    
-    for (int i=0; i < tam; i++)
-	{
-        printf("%i ", vetor[i]);
-    }
-    printf("\n");
-}
-
-
+/*
 int main()
 {
 
-    int vet[12];
-    int tam = 12;
+    int vector[1000];
 
-    for (int i=0;i<tam;i++)
-	{
-        vet[i] = rand() % 100 + 1;
-    }
+		create_vector(vector, 1000);
 
-    printf("Vetor Desordenado: ");
-    print_vetor(vet, tam);
+		quick_sort(vector, 0, 1000);
 
-    quick_sort(vet,0,tam);
+		print_vector(vector, 1000);
 
-    printf("Vetor Ordenado:");
-    print_vetor(vet, tam);
 
     return 0;
 }
+*/
