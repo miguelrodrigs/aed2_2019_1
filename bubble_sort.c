@@ -1,13 +1,9 @@
-#include "io.h"
-
-#define TAM 1000
-
-int * bubble_sort(int numbers[])
+void bubble_sort(int numbers[], int size)
 {
 	int aux;
-	for(int counter = 1 ; counter < TAM ; counter++)
+	for(int counter = 1 ; counter < size ; counter++)
 	{
-		for(int i = 0 ; i < TAM -1 ; i++)
+		for(int i = 0 ; i < size -1 ; i++)
 		{
 			if(numbers[i] > numbers[i+1])
 			{
@@ -17,13 +13,4 @@ int * bubble_sort(int numbers[])
 			}
 		}
 	}
-	return numbers;
-}
-
-int main ()
-{
-	int vector[TAM];
-	create_vector(vector, TAM);
-	bubble_sort(vector);
-	print_vector(vector, TAM);
 }
