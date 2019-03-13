@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include <math.h>
-
-void in_sort(int arr[], int n)
+#define TAM 1000
+int insertion_sort(int arr[])
 {
 	int i, key, j;
-	for (i=1; i<n; i++)
-    {
-		key = arr[i];
+	int vet_aux = arr;
+	for (i=1; i<TAM; i++)
+    	{
+		key = vet_aux[i];
 		j=i-1;
 
-		while (j>=0 && arr[j]>key)
+		while (j>=0 && vet_aux[j]>key)
 		{
-			arr[j+1] = arr[j];
+			vet_aux[j+1] = vet_aux[j];
 			j = j-1;
 		}
-		arr[j+1] = key;
+		vet_aux[j+1] = key;
 	}
+	return vet_aux;
 }
-
+/*
 void imprimir(int arr[], int n)
 {
 	int i;
@@ -42,3 +44,4 @@ int main()
 	return 0;
 
 }
+*/
