@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
-#include "leitura.h"
-#include "print.h"
+#include "io.h"
 
 #define TAM 1000
 
