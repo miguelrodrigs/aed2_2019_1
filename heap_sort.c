@@ -52,25 +52,7 @@ void heap_sort(int vect[],int size)
 }
 /*
 int main()
-{
-
-    int vect[12];
-    int i;
-    int size = 12;
-
-    for (i=0;i<size;i++)
-	{
-        vect[i] = rand() % 100 + 1;
-    }
-
-    printf("vector Desordenado: ");
-    print_vector(vect, size);
-
-    heap_sort(vect, size);
-
-    printf("vector Ordenado: ");
-    print_vector(vect, size);
-
+{    
   int vector[1000];
 
   create_vector(vector, 1000);
