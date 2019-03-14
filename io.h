@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define TAM 1000
 
 void create_vector(int * vector, int size)
 {
