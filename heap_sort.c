@@ -24,7 +24,7 @@ void heapfy(int vect[], int size, int i)
         vect[i] = vect[biggest];
         vect[biggest] = exchange;
 
-        heapfy(vect,size,biggest);
+        heapfy(vect, size, biggest);
     }
 }
 
@@ -35,18 +35,18 @@ void heap_sort(int vect[],int size)
 
     for(int i = (size/2) - 1 ; i >= 0 ; i-- )
 	{
-        heapfy(vect,size,i);
+        heapfy(vect, size, i);
 
     }
 
 
-    for(int i = size-1 ; i >= 0 ; i--)
+    for(int i = size - 1 ; i >= 0 ; i--)
 	{
         temp = vect[0];
         vect[0] = vect[i];
         vect[i] = temp;
 
-        heapfy(vect,i,0);
+        heapfy(vect, i, 0);
     }
 
 }
