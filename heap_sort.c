@@ -1,86 +1,82 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "io.h"
+// #include <stdlib.h>
 
-void heapfy(int vet[], int tam, int i)
+void heapfy(int vect[], int size, int i)
 {
-    int troca;
-    int maior = i;
-    int esq = i*2 + 1;
-    int dir = i*2 + 2;
+    int exchange;
+    int biggest = i;
+    int left = i*2 + 1;
+    int right = i*2 + 2;
 
-    if(esq < tam && vet[esq] > vet[maior])
+    if(left < size && vect[left] > vect[biggest])
 	{
-        maior = esq;
+        biggest = left;
     }
 
-    if(dir < tam && vet[dir] > vet[maior])
+    if(right < size && vect[right] > vect[biggest])
 	{
-        maior = dir;
+        biggest = right;
     }
 
-    if(maior != i)
+    if(biggest != i)
 	{
-        troca = vet[i];
-        vet[i] = vet[maior];
-        vet[maior] = troca;
+        exchange = vect[i];
+        vect[i] = vect[biggest];
+        vect[biggest] = exchange;
 
-        heapfy(vet,tam,maior);
+        heapfy(vect,size,biggest);
     }
 }
 
-void heap_sort(int vet[],int tam)
+void heap_sort(int vect[],int size)
 {
 
     int temp;
 
-    for(int i = (tam/2) - 1 ; i >= 0 ; i-- )
+    for(int i = (size/2) - 1 ; i >= 0 ; i-- )
 	{
-        heapfy(vet,tam,i);
+        heapfy(vect,size,i);
 
     }
 
-    
-    for(int i = tam-1 ; i >= 0 ; i--)
-	{
-        temp = vet[0];
-        vet[0] = vet[i];
-        vet[i] = temp;
 
-        heapfy(vet,i,0);
+    for(int i = size-1 ; i >= 0 ; i--)
+	{
+        temp = vect[0];
+        vect[0] = vect[i];
+        vect[i] = temp;
+
+        heapfy(vect,i,0);
     }
 
 }
-
-void print_vetor(int vetor[], int tam)
-{
-    
-    for (int i=0; i < tam; i++)
-	{
-        printf("%i ", vetor[i]);
-    }
-    printf("\n");
-}
-
+/*
 int main()
 {
 
-    int vet[12];
+    int vect[12];
     int i;
-    int tam = 12;
+    int size = 12;
 
-    for (i=0;i<tam;i++)
+    for (i=0;i<size;i++)
 	{
-        vet[i] = rand() % 100 + 1;
+        vect[i] = rand() % 100 + 1;
     }
-    
-    printf("Vetor Desordenado: ");
-    print_vetor(vet, tam);
 
-    heap_sort(vet, tam);
+    printf("vector Desordenado: ");
+    print_vector(vect, size);
 
-    printf("Vetor Ordenado: ");
-    print_vetor(vet, tam);
-    
+    heap_sort(vect, size);
+
+    printf("vector Ordenado: ");
+    print_vector(vect, size);
+
+  int vector[1000];
+
+  create_vector(vector, 1000);
+  heap_sort(vector, 1000);
+  print_vector(vector, 1000);
 
     return 0;
 }
+*/
