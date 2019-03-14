@@ -1,6 +1,4 @@
 #include "io.h"
-#include <stdlib.h>
-
 void quick_sort(int vect[], int beginning, int end)
 {
 	int i, j, pivot, aux;

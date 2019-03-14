@@ -1,5 +1,3 @@
-void selection_sort(int *vector, int size);
-
 int selection_sort(int *vector, int size){
     int smallest;
     int aux;

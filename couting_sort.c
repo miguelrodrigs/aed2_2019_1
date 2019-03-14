@@ -19,10 +19,10 @@ void counting_sort(int vector[], int size)
         count[vector[i]] = count[vector[i]] + 1;
 
 }
-
+/*
 int main()
 {
-    /*
+
     int a[50], n, i, max = 0;
     printf("Insira a quantidade de elementos: ");
     scanf("%d", &n);
@@ -38,5 +38,6 @@ int main()
     counting_sort(a, n, max);
     printf("\n");
     return 0;
-    */
+
 }
+*/
