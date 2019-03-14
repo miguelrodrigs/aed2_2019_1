@@ -1,6 +1,5 @@
 #include "io.h"
-#include "bubble_sort.c"
-#include "selection_sort.c"
+#include "sort.h"
 #define TAM 1000
 
 int main(){

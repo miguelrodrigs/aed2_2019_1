@@ -29,10 +29,10 @@ void shell_sort(int *vector, int size)
  }while(gap > 1);
 }
 
-int selection_sort(int *vector, int size){
+void selection_sort(int *vector, int size){
     int smallest;
     int aux;
-    int aux_vect[size] = vector;
+    int * aux_vect = vector;
 
     for( int i = 0; i < size-1; i++)
     {
@@ -50,7 +50,6 @@ int selection_sort(int *vector, int size){
         aux_vect[smallest] = aux;
 
     }
-    return aux_vect;
 }
 
 void quick_sort(int vect[], int beginning, int end)
